@@ -1,0 +1,15 @@
+public class Solution2 {
+    public int MajorityElement(int[] nums) {
+        int mostFrequent = nums[0];
+        int count = 0;
+
+        foreach (int num in nums) {
+            if (count == 0) {
+                mostFrequent = num;
+            }
+            count += (num == mostFrequent) ? 1 : -1;
+        }
+
+        return mostFrequent;
+    }
+}
